@@ -8,7 +8,7 @@ const forecast = (latitude , longtitude , callback) =>{
         }else if(body.error){
             callback("Type the right location",undefined)
         }else{
-            callback(undefined,body.current.weather_descriptions[0]+". Temperature is "+body.current.temperature+" degrees and it feels like "+body.current.feelslike + " degrees with the humidity of " + body.current.humidity + ".")
+            callback(undefined,body.current.weather_descriptions[0]+". Temperature is "+body.current.temperature+" degrees and it feels like "+body.current.feelslike + " degrees with the humidity of " + body.current.humidity + "%.")
         
         }
     })
