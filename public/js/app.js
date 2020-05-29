@@ -28,6 +28,10 @@ autolocate.addEventListener("click",(e)=>{
     message1.textContent = "Loading.."
     message2.textContent= ""
     navigator.geolocation.getCurrentPosition((position)=>{
+        if (!navigator.geolocation) {
+            return alert('Geolocation is not supported by your browser.') 
+        }
+            
         fetch("/autoWeather?latitude="+position.coords.latitude+"&longtitude="+position.coords.longitude).then((response)=>{
             response.json().then((data)=>{
                 if(data.error){
